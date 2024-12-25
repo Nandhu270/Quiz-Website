@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-    <div class="quiz-container" id="cont">
-        <div class="container">
-            <h1 align="center" style="margin-bottom: 0px;">QUIZ</h1>
-            <div class="question-container">
-                <h3 id="question_no"></h3>
-                <div id="question" align="center"></div>
-                <div id="option" class="box"></div>
-            </div>
-            <div class="btn">
-                <button id="previous-btn" disabled onclick="previous()">Previous</button>
-                <button id="next-btn" onclick="next()">Next</button>
-            </div>
-            <div class="sub-btn">
-                <button id="submit-btn" onclick="submitquiz()" style="display: none;">Submit</button>
-            </div>
+  </head>
+  <body>
+    <div class="start-container" id="start-container">
+      <h1>General Quiz in HTML</h1>
+      <button id="start-quiz-btn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+    <div class="quiz-container" id="cont" style="display: none">
+      <div class="container">
+        <h1 align="center" style="margin-bottom: 0px">QUIZ</h1>
+        <div class="question-container">
+          <h3 id="question_no"></h3>
+          <div id="question" align="center"></div>
+          <div id="option" class="box"></div>
         </div>
+        <div class="btn">
+          <button id="previous-btn" disabled onclick="previous()">
+            Previous
+          </button>
+          <button id="next-btn" onclick="next()">Next</button>
+        </div>
+        <div class="sub-btn">
+          <button id="submit-btn" onclick="submitquiz()" style="display: none">
+            Submit
+          </button>
+        </div>
+      </div>
     </div>
     <div class="ans-container">
-        <h1 id="head"></h1>
-        <div id="mark" align="center"></div>
-        <div id="status" align="center"></div>
+      <h1 id="head"></h1>
+      <div id="mark" align="center"></div>
+      <div id="status" align="center"></div>
     </div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
