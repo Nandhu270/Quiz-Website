@@ -62,19 +62,16 @@ let submitquiz = () => {
     let mark = document.getElementById('mark');
     let status = document.getElementById('status');
 
-    let tot_mark = totmark(); // Calculate the total marks
+    let tot_mark = totmark(); 
+    document.getElementById('head').textContent="Result"
+    mark.textContent = `You scored: ${tot_mark} out of ${questions.length}`; 
 
-    // document.querySelector('.ans-container').style.display='block'
-    mark.textContent = `You scored: ${tot_mark} out of ${questions.length}`; // Display the total marks
-5
-    if (tot_mark <= 2)
-        status.textContent = "Keep Practising";
-    else if (tot_mark == 3)
-        status.textContent = "Good";
-    else if (tot_mark == 4)
-        status.textContent = "Very Good";
+    if (tot_mark / questions.length > 0.8)
+        status.textContent = "Excellent!...";
+    else if (tot_mark / questions.length > 0.5)
+        status.textContent = "Good Job!...";
     else
-        status.textContent = "Excellent";
+        status.textContent = "Keep practicing!...";
 
     const chartContainer = document.createElement('div');
     chartContainer.innerHTML = `<canvas id="quizResultsChart" width="400" height="200"></canvas>`;
@@ -82,14 +79,14 @@ let submitquiz = () => {
 
     const ctx = document.getElementById('quizResultsChart').getContext('2d');
     new Chart(ctx, {
-        type: 'pie', // Change the chart type to 'pie'
+        type: 'doughnut', 
         data: {
             labels: ['Correct Answers', 'Incorrect Answers'],
             datasets: [{
                 label: 'Quiz Results',
                 data: [tot_mark, questions.length - tot_mark],
-                backgroundColor: ['#4caf50', '#f44336'], // Green for correct, Red for incorrect
-                borderColor: ['#388e3c', '#d32f2f'],
+                backgroundColor: ['rgb(90, 255, 255)', 'rgb(255, 90, 90)'], 
+                borderColor: ['skyblue', 'red'],
                 borderWidth: 1
             }]
         },

@@ -1,6 +1,5 @@
 body {
   height: 100vh;
-  /* background: url("https://plus.unsplash.com/premium_photo-1701520913524-67f8a9e21185?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHBsYWluJTIwYmFja2dyb3VuZCUyMGNvbG9yfGVufDB8MHwwfHx8MA%3D%3D"); */
   background-size: cover;
   display: flex;
   align-items: center;
@@ -12,7 +11,6 @@ body {
   margin: 0px;
   width: 38vw;
   height: 100vh;
-  /* background-color: aqua; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -129,6 +127,29 @@ button:disabled {
     flex-direction: column;
     
 }
+
+#mark{
+  color: rgb(255, 0, 230);
+  font-size: xx-large;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+#status{
+  color: rgb(255, 0, 230);
+  font-size: xx-large;
+  font-weight: bolder;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+#head{
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bolder;
+  font-style: italic;
+}
+
 
 /* Mobile Phones */
 @media screen and (max-width: 600px) {
