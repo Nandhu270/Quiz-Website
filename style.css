@@ -6,24 +6,32 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    background: whitesmoke;
 }
 
 .quiz-container{
     margin: 0px;
     width: 38vw;
     height: 100vh;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.container{
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .question-container{
     width: 30vw;
     margin-top: 10px;
     margin-bottom: 15px;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 
 #question_no{
@@ -36,7 +44,28 @@ body{
 }
 
 .btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
     margin-top: 5px;
+}
+
+button{
+    width: 5vw;
+    height: 4vh;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sub-btn{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+#previous-btn:disabled , #next-btn:disabled{
+    cursor:not-allowed;
 }
 #option{
     display: flex;
@@ -50,12 +79,14 @@ body{
     width: 15vw;
     margin: 10px;
     padding: 10px;
-    cursor: pointer;
+    cursor: pointer; 
+    user-select: text;
     border: 1px solid black;
     border-radius: 25px;
-    /* background-color: #f1f1f1; */
+    background-color: #f1f1f1;
+    text-align: center;
 }
 
-.opt:hover{
-    background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
-}
+.selected {
+    background-color: #0a81ff;
+  }

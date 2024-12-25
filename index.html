@@ -7,17 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <h1 align="center" style="margin-bottom: 0px;">QUIZ</h1>
-        <div class="question-container">
-            <h3 id="question_no"></h3>
-            <div id="question" align="center"></div>
-            <div id="option"></div>
+    <div class="quiz-container" id="cont">
+        <div class="container">
+            <h1 align="center" style="margin-bottom: 0px;">QUIZ</h1>
+            <div class="question-container">
+                <h3 id="question_no"></h3>
+                <div id="question" align="center"></div>
+                <div id="option"></div>
+            </div>
+            <div class="btn">
+               <div class="prev-btn">
+                <button id="previous-btn" disabled onclick="previous()">Previous</button>
+               </div>
+               <div class="nex-btn">
+                <button id="next-btn" onclick="next()">Next</button>
+               </div>
+            </div>
+            <div class="sub-btn">
+                <button id="submit-btn" onclick="submitquiz()" style="display: none;text-align: center;">Submit</button>
+            </div>
         </div>
-        <div class="btn">
-            <button id="previous-btn" disabled onclick="previous()">Previous</button>
-            <button id="next-btn" onclick="next()">Next</button>
-        </div>
+    </div>
+    <div class="ans-container" id="ans">
+        <div id="mark"></div>
+        <div id="status"></div>
     </div>
     <script src="index.js"></script>
 </body>

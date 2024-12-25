@@ -8,6 +8,7 @@ var questions = [
 
 var crt_ans = 0
 var count = 0
+var userans = []
 
 function loadquestion(){
     let question_no = document.getElementById('question_no');
@@ -15,24 +16,33 @@ function loadquestion(){
     question_no.textContent = `Question ${count+1} of ${questions.length}`
     quest.textContent = questions[count].question
     option.innerHTML=''
-    questions[count].answer.forEach(arr => {
+    questions[count].answer.forEach(ansarr => {
         var box = document.createElement("div")
-        box.textContent=arr
+        box.textContent=ansarr
         box.classList.add("opt");
-        box.onclick = () => selectedanswer(arr);
+        box.addEventListener("click", () => selectedanswer(ansarr,box));
         option.appendChild(box)
     });
+    document.getElementById('next-btn').disabled = count === questions.length-1;
     document.getElementById('previous-btn').disabled = count === 0;
-    document.getElementById('next-btn').disabled = count === questions.length - 1;
+    document.getElementById('submit-btn').style.display =  count === questions.length-1 ? 'block' : 'none'
    
 }
 
-function selectedanswer(ans){
+function selectedanswer(ans,box){
     if (ans === questions[count].crt) {
-        alert("Correct!");
-      } else {
-        alert("Not correct!");
-      }
+        userans[count] = 1
+    }else{
+        userans[count] = 0
+    }
+    let opt = document.querySelectorAll('.opt')
+    opt.forEach(option => {
+        option.classList.remove("selected");
+      });
+
+      box.classList.add("selected")
+      
+
 }
 
 let next = ()=>{
@@ -45,6 +55,34 @@ let previous = () => {
     if(count > 0)
     count--;
     loadquestion();
+}
+
+let submitquiz = () => {
+    document.querySelector('#cont').innerHTML = ""
+    let mark = document.getElementById('mark');
+    let status = document.getElementById('status')
+
+    let tot_mark = totmark()
+
+    mark.textContent = tot_mark
+
+    if(tot_mark <= 2)
+        status.textContent = "keep Practising"
+    else if(tot_mark == 3)
+        status.textContent = "Good"
+    else if(tot_mark == 4)
+        status.textContent = "Very Good"
+    else
+        status.textContent = "Excellent"
+
+}
+
+totmark = ()=>{
+    let c = 0
+    for(let i of userans){
+        if(i == 1) c++
+    }
+    return c
 }
 
 loadquestion()
