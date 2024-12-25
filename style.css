@@ -1,92 +1,258 @@
-body{
-    height: 100vh;
-    /* background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: whitesmoke;
+body {
+  height: 100vh;
+  /* background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: whitesmoke;
 }
 
-.quiz-container{
-    margin: 0px;
-    width: 38vw;
-    height: 100vh;
-    /* background-color: aqua; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.quiz-container {
+  margin: 0px;
+  width: 38vw;
+  height: 100vh;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.container{
-    background: rgb(255, 255, 255);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.question-container{
-    width: 30vw;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    /* background-color: blueviolet; */
+.question-container {
+  width: 100%;
+  margin: 10px 0 15px;
+  /* background-color: blueviolet; */
 }
 
-#question_no{
-    text-align: center;
+#question_no {
+  text-align: center;
 }
 
-#question{
-    text-align: center;
-    margin-bottom: 3px;
+#question {
+  text-align: center;
+  margin-bottom: 3px;
 }
 
-.btn{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 5px;
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 5px;
 }
 
-button{
-    width: 5vw;
-    height: 4vh;
-    border-radius: 10px;
-    cursor: pointer;
+button {
+  width: 7vw;
+  height: 5vh;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #0a81ff, #5b7df1);
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.sub-btn{
-    display: flex;
-    justify-content: center;
-    margin: 10px;
+button:hover {
+  background: linear-gradient(135deg, #3e8bff, #1e6fb1);
+  transform: scale(1.01);
 }
 
-#previous-btn:disabled , #next-btn:disabled{
-    cursor:not-allowed;
+button:disabled {
+  width: 7vw;
+  height: 5vh;
+  cursor: not-allowed;
+  background: #b5b5b5;
+  box-shadow: none;
 }
-#option{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0px;
+
+.sub-btn {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
 }
-.opt{
-    display: flex;
-    justify-content: center;
-    width: 15vw;
-    margin: 10px;
-    padding: 10px;
-    cursor: pointer; 
-    user-select: text;
-    border: 1px solid black;
-    border-radius: 25px;
-    background-color: #f1f1f1;
-    text-align: center;
+
+#previous-btn:disabled,
+#next-btn:disabled {
+  cursor: not-allowed;
+}
+#option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+}
+.opt {
+  display: flex;
+  justify-content: center;
+  width: 18vw;
+  padding: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.opt:hover {
+  background-color: #d1e6f7;
+  transform: scale(1.03);
+}
+
+.opt:active {
+  background-color: #acb8c5;
+  transform: scale(0.98);
 }
 
 .selected {
-    background-color: #0a81ff;
+  background-color: #0a81ff;
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 600px) {
+  .quiz-container {
+    width: 100vw;
+    padding: 15px;
   }
+
+  .question-container {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .opt {
+    width: 90%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  button {
+    width: 50vw;
+    font-size: 1.1rem;
+    padding: 5px;
+    text-align: center;
+    height: 5vh;
+  }
+
+  button:disabled {
+    width: 50vw;
+    font-size: 1.1rem;
+    padding: 5px;
+    text-align: center;
+    height: 5vh;
+  }
+
+  #question {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  #submit-btn {
+    width: 50vw;
+    font-size: 1.1rem;
+    padding: 5px;
+    text-align: center;
+    height: 6vh;
+  }
+  .btn {
+    flex-direction: column;
+    gap: 11px;
+    align-items: center;
+  }
+  .opt:hover {
+    background-color: #d1e6f7;
+    transform: scale(1.03);
+  }
+
+  .opt:active {
+    background-color: #acb8c5;
+    transform: scale(0.98);
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .quiz-container {
+        width: 90vw;
+        padding: 20px;
+    }
+
+    .question-container {
+        width: 70vw; 
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .opt {
+        width: 70%;
+        font-size: 1.5rem; 
+        padding: 15px; 
+        margin: 10px auto;
+        border-radius: 10px;
+    }
+
+    button {
+        width: 30vw;
+        font-size: 1.2rem;
+        padding: 10px; 
+        text-align: center;
+        height: 6vh; 
+    }
+
+    button:disabled {
+        width: 30vw;
+        font-size: 1.2rem; 
+        padding: 10px;
+        text-align: center;
+        height: 6vh; 
+    }
+
+    #question {
+        font-size: 1.5rem;
+        padding: 10px; 
+        text-align: center;
+    }
+
+    #submit-btn {
+        width: 30vw;
+        font-size: 1.2rem; 
+        padding: 10px;
+        text-align: center;
+        height: 6vh;
+        margin-top: 15px;
+    }
+
+    .btn {
+        flex-direction: row;
+        gap: 20px; 
+        justify-content: center; 
+    }
+
+    .opt:hover {
+        background-color: #d1e6f7;
+        transform: scale(1.03); 
+    }
+
+    .opt:active {
+        background-color: #acb8c5;
+        transform: scale(0.98);
+    }
+}
+
