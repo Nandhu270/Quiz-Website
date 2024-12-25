@@ -58,14 +58,15 @@ let previous = () => {
 }
 
 let submitquiz = () => {
-    document.querySelector('#cont').innerHTML = ""; // Clear the quiz container
+    document.getElementById('cont').remove()
     let mark = document.getElementById('mark');
     let status = document.getElementById('status');
 
     let tot_mark = totmark(); // Calculate the total marks
 
+    // document.querySelector('.ans-container').style.display='block'
     mark.textContent = `You scored: ${tot_mark} out of ${questions.length}`; // Display the total marks
-
+5
     if (tot_mark <= 2)
         status.textContent = "Keep Practising";
     else if (tot_mark == 3)
@@ -102,7 +103,7 @@ let submitquiz = () => {
             }
         }
     });
-};
+}
 
 
 totmark = ()=>{
