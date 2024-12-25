@@ -107,7 +107,7 @@ let submitquiz = () => {
         {
           label: "Quiz Results",
           data: [tot_mark, questions.length - tot_mark],
-          backgroundColor: ["rgb(90, 255, 255)", "rgb(255, 90, 90)"],
+          backgroundColor: ["rgba(90, 255, 255, 0.46)", "rgb(255, 90, 90)"],
           borderColor: ["skyblue", "red"],
           borderWidth: 1,
         },
