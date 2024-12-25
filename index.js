@@ -58,31 +58,55 @@ let previous = () => {
 }
 
 let submitquiz = () => {
-    document.querySelector('#cont').innerHTML = ""
+    document.querySelector('#cont').innerHTML = ""; // Clear the quiz container
     let mark = document.getElementById('mark');
-    let status = document.getElementById('status')
+    let status = document.getElementById('status');
 
-    let tot_mark = totmark()
+    let tot_mark = totmark(); // Calculate the total marks
 
-    mark.textContent = tot_mark
+    mark.textContent = `You scored: ${tot_mark} out of ${questions.length}`; // Display the total marks
 
-    if(tot_mark <= 2)
-        status.textContent = "keep Practising"
-    else if(tot_mark == 3)
-        status.textContent = "Good"
-    else if(tot_mark == 4)
-        status.textContent = "Very Good"
+    if (tot_mark <= 2)
+        status.textContent = "Keep Practising";
+    else if (tot_mark == 3)
+        status.textContent = "Good";
+    else if (tot_mark == 4)
+        status.textContent = "Very Good";
     else
-        status.textContent = "Excellent"
+        status.textContent = "Excellent";
 
-}
+    const chartContainer = document.createElement('div');
+    chartContainer.innerHTML = `<canvas id="quizResultsChart" width="400" height="200"></canvas>`;
+    document.querySelector('.ans-container').appendChild(chartContainer);
+
+    const ctx = document.getElementById('quizResultsChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'pie', // Change the chart type to 'pie'
+        data: {
+            labels: ['Correct Answers', 'Incorrect Answers'],
+            datasets: [{
+                label: 'Quiz Results',
+                data: [tot_mark, questions.length - tot_mark],
+                backgroundColor: ['#4caf50', '#f44336'], // Green for correct, Red for incorrect
+                borderColor: ['#388e3c', '#d32f2f'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                }
+            }
+        }
+    });
+};
+
 
 totmark = ()=>{
-    let c = 0
-    for(let i of userans){
-        if(i == 1) c++
-    }
-    return c
+    return userans.filter(ans => ans === 1).length;
 }
 
 loadquestion()
