@@ -193,7 +193,7 @@ button:disabled {
 @media screen and (max-width: 600px) {
   #start-quiz-btn {
     width: 60vw;
-    font-size: 1.5rem;
+    font-size: 2.0rem;
     padding: 5px;
     text-align: center;
     height: 5vh;
@@ -206,7 +206,7 @@ button:disabled {
 
   .question-container {
     width: 100%;
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .opt {
     width: 90%;
