@@ -11,7 +11,7 @@ This project is an interactive quiz application built using **HTML**, **CSS**, a
 - **Responsive Design**: Optimized for various screen sizes, including mobile and tablet.
 
 ## Live Demo
-To see the project in action, open the `index.html` file in your browser.
+To see the project in action, open the [live demo]https://nandhu270.github.io/Quiz-Website/ in your browser.
 
 ## Getting Started
 
@@ -36,8 +36,9 @@ The results chart is powered by [Chart.js](https://www.chartjs.org/). You can mo
 ![image](https://github.com/user-attachments/assets/9de4f6db-894a-4181-9c24-aef18dc79329)
 ![image](https://github.com/user-attachments/assets/57837b0e-969f-429d-a279-ca93fed2b5ce)
 ![image](https://github.com/user-attachments/assets/3164c751-2054-4e09-8952-fe003226b389)
-![image](https://github.com/user-attachments/assets/590207a7-27bc-4ac5-a7f3-efa5fa5bf0b0)
-![image](https://github.com/user-attachments/assets/63ce0bc4-af69-48fd-a818-1d2cd483ab0e)
+![image](https://github.com/user-attachments/assets/54de3578-4c87-46b1-bb9e-c88c792c9b71)
+![image](https://github.com/user-attachments/assets/ada4a3ba-e73b-44c3-a054-a18c5e86490c)
+
 
 
 
