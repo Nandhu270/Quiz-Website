@@ -1,33 +1,85 @@
 var questions = [
   {
-    question: "Who was the first human to walk on the Moon?",
+    question:
+      "Which HTML attribute is used to specify that an input field must be filled out?",
+    answer: ["Required", "Mandatory", "Validate", "Placeholder"],
+    crt: "Required",
+  },
+  {
+    question: "What is the correct HTML element to embed a video file?",
+    answer: ["<movie>", "<media>", "<video>", "<embed>"],
+    crt: "<video>",
+  },
+  {
+    question: "How can you specify multiple stylesheets for a webpage?",
     answer: [
-      "Neil Armstrong",
-      "Rakesh Sharma",
-      "Edwin Aldrin",
-      "Kalpana Chawla",
+      " Using multiple <style> elements in the <head> section",
+      " By listing multiple <link> elements in the <head> section",
+      "By using a semicolon-separated list in the href attribute of a <link> tag",
+      "None of the above",
     ],
-    crt: "Neil Armstrong",
+    crt: "By listing multiple <link> elements in the <head> section",
   },
   {
-    question: "Which planet is known as the Red Planet",
-    answer: ["Earth", "Jupiter", "Mars", "Saturn"],
-    crt: "Mars",
+    question: "Which HTML element is used to define a client-side script?",
+    answer: ["<script>", "<client>", "<code>", "<javascript>"],
+    crt: "<script>",
   },
   {
-    question: "What is the largest planet in our solar system?",
-    answer: ["Earth", "Jupiter", "Mars", "Saturn"],
-    crt: "Jupiter",
+    question:
+      "What does the target=" +
+      "_blank" +
+      " attribute do in an anchor (<a>) tag?",
+    answer: [
+      "Opens the linked document in a new tab or window",
+      "Highlights the link",
+      "Embeds the linked page into the current page",
+      "Opens the linked document in a pop-up",
+    ],
+    crt: "Opens the linked document in a new tab or window",
   },
   {
-    question: " What is the longest river in the world?",
-    answer: ["Nile", "Ganga", "Krishna", "Yamuna"],
-    crt: "Nile",
+    question:
+      "Which HTML5 tag is used to specify a container for navigation links?",
+    answer: ["<navigation>", "<nav>", "<menu>", "<navbar>"],
+    crt: "<nav>",
   },
   {
-    question: " Which country is known as the Land of the Rising Sun?",
-    answer: ["Japan", "India", "England", "France"],
-    crt: "Japan",
+    question: "What is the purpose of the <meta charset=" + "UTF-8" + "> tag?",
+    answer: [
+      " To specify the language of the webpage",
+      "To define the encoding used for the document",
+      "To include external resources",
+      "To optimize the page for search engines",
+    ],
+    crt: "To define the encoding used for the document",
+  },
+  {
+    question:
+      "Which attribute is used to specify that an input field should be read-only?",
+    answer: ["readonly", "disabled", "locked", "writeonly"],
+    crt: "readonly",
+  },
+  {
+    question:
+      "In an HTML form, what is the purpose of the action attribute in the <form> tag?",
+    answer: [
+      " To specify the type of input allowed",
+      "To define where the form data should be sent after submission",
+      "To handle JavaScript validation for the form",
+      "To define the encoding type of the form",
+    ],
+    crt: "To define where the form data should be sent after submission",
+  },
+  {
+    question: "How do you make an image clickable to link to another webpage?",
+    answer: [
+      "By wrapping the <img> tag inside an <a> tag",
+      "By using the href attribute inside the <img> tag",
+      " By adding the onclick attribute in the <img> tag",
+      " By using the <image-link> tag",
+    ],
+    crt: "By wrapping the <img> tag inside an <a> tag",
   },
 ];
 
@@ -87,12 +139,10 @@ let submitquiz = () => {
   document.getElementById("head").textContent = "Result";
   mark.textContent = `You scored: ${tot_mark} out of ${questions.length}`;
 
-  if (tot_mark / questions.length > 0.8) 
-    status.textContent = "Excellent!...";
+  if (tot_mark / questions.length > 0.8) status.textContent = "Excellent!...";
   else if (tot_mark / questions.length > 0.5)
     status.textContent = "Good Job!...";
-  else 
-    status.textContent = "Keep practicing!...";
+  else status.textContent = "Keep practicing!...";
 
   const chartContainer = document.createElement("div");
   chartContainer.innerHTML = `<canvas id="quizResultsChart" width="400" height="200"></canvas>`;
@@ -130,7 +180,7 @@ totmark = () => {
 };
 
 function startQuiz() {
-  document.getElementById("start-container").remove(); 
-  document.getElementById("cont").style.display = "flex"; 
+  document.getElementById("start-container").remove();
+  document.getElementById("cont").style.display = "flex";
   loadquestion();
 }

@@ -8,7 +8,7 @@ body {
   background: linear-gradient(
     to bottom,
     rgb(186, 242, 255),
-    rgb(255, 201, 247),
+    rgb(255, 206, 248),
     rgb(212, 212, 255),
     rgb(228, 183, 250)
   );
@@ -44,7 +44,7 @@ body {
   transform: scale(1.05);
 }
 
-.quiz-container{
+.quiz-container {
   margin: 0px;
   width: 38vw;
   height: 100vh;
@@ -53,7 +53,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 
 .container {
   display: flex;
