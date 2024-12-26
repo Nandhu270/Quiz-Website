@@ -219,7 +219,7 @@ button:disabled {
     font-size: 1.3rem;
     padding: 5px;
     text-align: center;
-    height: 4vh;
+    height: 6vh;
   }
 
   button:disabled {
@@ -227,7 +227,7 @@ button:disabled {
     font-size: 1.1rem;
     padding: 5px;
     text-align: center;
-    height: 4vh;
+    height: 6vh;
   }
 
   #question {
@@ -240,7 +240,7 @@ button:disabled {
     font-size: 1.1rem;
     padding: 5px;
     text-align: center;
-    height: 4vh;
+    height: 6vh;
   }
   .btn {
     flex-direction: column;
@@ -275,7 +275,7 @@ button:disabled {
 
   .question-container {
     width: 70vw;
-    font-size: 1.2rem;
+    font-size: 2em;
     text-align: center;
   }
 
@@ -290,17 +290,17 @@ button:disabled {
   button {
     width: 30vw;
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
-    height: 6vh;
+    height: 4vh;
   }
 
   button:disabled {
     width: 30vw;
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
-    height: 6vh;
+    height: 4vh;
   }
 
   #question {
@@ -312,9 +312,9 @@ button:disabled {
   #submit-btn {
     width: 30vw;
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
-    height: 6vh;
+    height: 4vh;
     margin-top: 15px;
   }
 
