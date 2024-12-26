@@ -13,8 +13,8 @@ var questions = [
   {
     question: "How can you specify multiple stylesheets for a webpage?",
     answer: [
-      " Using multiple <style> elements in the <head> section",
-      " By listing multiple <link> elements in the <head> section",
+      "Using multiple <style> elements in the <head> section",
+      "By listing multiple <link> elements in the <head> section",
       "By using a semicolon-separated list in the href attribute of a <link> tag",
       "None of the above",
     ],
